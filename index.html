@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>David Dobrik Coin — $DAVID</title>
-  <meta name="description" content="David Dobrik Coin ($DAVID) — The currency of FOMO." />
+  <meta name="description" content="David Dobrik Coin ($DAVID) on Robinhood Chain — the currency of FOMO." />
   <meta name="theme-color" content="#090909" />
   <meta property="og:title" content="David Dobrik Coin — $DAVID" />
-  <meta property="og:description" content="The currency of FOMO." />
+  <meta property="og:description" content="The currency of FOMO. Live on Robinhood Chain." />
   <meta property="og:image" content="assets/banner.png" />
   <link rel="icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,15 +25,15 @@
       <a href="#about">About</a>
       <a href="#ca">Contract</a>
       <a href="#chart">Chart</a>
-      <a href="#tweet">Tweet</a>
-      <a href="https://x.com/TheApophenoth/status/2116564158401446384" target="_blank" rel="noopener">X</a>
+      <a href="#tweet">X</a>
+      <a data-x href="https://x.com/hooddavid_" target="_blank" rel="noopener">Follow</a>
     </nav>
   </header>
 
   <main class="wrap" id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">David Dobrik Coin</p>
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>Live on Robinhood Chain</p>
         <h1>The currency<br />of <em>FOMO.</em></h1>
         <p class="ticker">$DAVID</p>
         <p class="lead">
@@ -42,18 +42,43 @@
         </p>
         <div class="cta-row">
           <a class="btn primary" href="#ca">Get the CA</a>
+          <a class="btn" data-trade href="https://dexscreener.com/robinhood/0xa90e82b4dc2007a4b198ecb5966d3a17dc7fae4586eb3e6191e5956a25399fb8" target="_blank" rel="noopener">Trade</a>
           <a class="btn" href="#chart">Live chart</a>
-          <a class="btn" href="https://x.com/TheApophenoth/status/2116564158401446384" target="_blank" rel="noopener">Origin tweet</a>
+          <a class="btn" data-x href="https://x.com/hooddavid_" target="_blank" rel="noopener">@hooddavid_</a>
         </div>
       </div>
-      <div class="hero-coin">
-        <img src="assets/logo.png" alt="1 David Coin — the currency of FOMO" />
+      <div class="hero-coin" id="coin">
+        <div class="coin-float">
+          <div class="coin-tilt">
+            <img src="assets/logo.png" alt="1 David Coin — the currency of FOMO" />
+            <span class="coin-shine" aria-hidden="true"></span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="stills" aria-label="Party stills">
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>$DAVID</span>
+          <span>The currency of FOMO</span>
+          <span>Robinhood Chain</span>
+          <span>1 David Coin</span>
+          <span>Club FOMO</span>
+        </div>
+        <div class="marquee-group">
+          <span>$DAVID</span>
+          <span>The currency of FOMO</span>
+          <span>Robinhood Chain</span>
+          <span>1 David Coin</span>
+          <span>Club FOMO</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="stills reveal" aria-label="Party stills">
       <figure>
-        <img src="assets/party1.jpg" alt="David Dobrik at the Halloween party" />
+        <img src="assets/party1.jpg" alt="David Dobrik" />
         <figcaption>Halloween party</figcaption>
       </figure>
       <figure>
@@ -62,54 +87,55 @@
       </figure>
     </section>
 
-    <section class="about" id="about">
+    <section class="about reveal" id="about">
       <div>
         <p class="eyebrow">About</p>
         <blockquote>
           <p>He made a FOMO. It’s his username, funded last night.</p>
-          <footer>Apophenoth</footer>
+          <footer>The call that started $DAVID</footer>
         </blockquote>
       </div>
       <div class="about-copy">
         <p>
-          <strong>David Dobrik Coin</strong> ($DAVID) is the currency of FOMO.
-          Built for the moment FOMO hit the Halloween party.
+          <strong>David Dobrik Coin</strong> ($DAVID) is the currency of FOMO,
+          live on Robinhood Chain.
         </p>
-        <p>One coin. The call that started it.</p>
+        <p>One coin. The party. The call that started it.</p>
       </div>
     </section>
 
-    <figure class="portrait">
+    <figure class="portrait reveal">
       <img src="assets/banner.png" alt="David Dobrik" />
     </figure>
 
     <section class="split">
-      <article class="panel" id="ca">
+      <article class="panel reveal" id="ca">
         <h2>Contract address</h2>
+        <p class="panel-note">Robinhood Chain</p>
         <div class="ca-box">
-          <code id="ca-text">Coming soon</code>
+          <code id="ca-text">0x1dc8eA274d38F586C7235120e88Cacd1b3931c3c</code>
           <button class="btn" type="button" id="copy-ca">Copy</button>
         </div>
         <div class="copy-toast" id="copy-toast" role="status">Copied.</div>
       </article>
 
-      <article class="panel" id="tweet">
-        <h2>Origin tweet</h2>
-        <div class="tweet-embed">
-          <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">
-            <p lang="en" dir="ltr">He made a FOMO its his username funded last night</p>
-            &mdash; ap 💎 (@TheApophenoth)
-            <a href="https://x.com/TheApophenoth/status/2116564158401446384">October 31, 2026</a>
-          </blockquote>
-        </div>
-        <noscript>
-          <p class="tweet-fallback"><a href="https://x.com/TheApophenoth/status/2116564158401446384" target="_blank" rel="noopener">View on X</a></p>
-        </noscript>
+      <article class="panel reveal" id="tweet">
+        <h2>Official X</h2>
+        <a class="x-card" data-x href="https://x.com/hooddavid_" target="_blank" rel="noopener">
+          <span class="x-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </span>
+          <span class="x-copy">
+            <strong>@hooddavid_</strong>
+            <span>David Dobrik Coin · $DAVID</span>
+          </span>
+          <span class="x-go">Follow</span>
+        </a>
       </article>
     </section>
 
-    <section class="panel chart-panel" id="chart">
-      <h2>DexScreener</h2>
+    <section class="panel chart-panel reveal" id="chart">
+      <h2>DexScreener · Robinhood Chain</h2>
       <div id="chart-root">
         <div class="chart-placeholder">
           <div>
@@ -121,7 +147,7 @@
     </section>
 
     <footer class="foot">
-      <div>David Dobrik Coin · $DAVID</div>
+      <div>David Dobrik Coin · $DAVID · Robinhood Chain</div>
       <div>Not financial advice · DYOR</div>
     </footer>
   </main>
@@ -132,26 +158,54 @@
       var cfg = window.DAVID || {};
       var caEl = document.getElementById("ca-text");
       var toast = document.getElementById("copy-toast");
+      var copyBtn = document.getElementById("copy-ca");
       var ca = (cfg.ca && cfg.ca !== "COMING_SOON") ? cfg.ca : "";
       caEl.textContent = ca || "Coming soon";
 
-      document.getElementById("copy-ca").addEventListener("click", function () {
+      var twitter = cfg.twitter || "https://x.com/hooddavid_";
+      document.querySelectorAll("[data-x]").forEach(function (el) {
+        el.href = twitter;
+      });
+
+      var pair = (cfg.dexscreenerPair || "").replace(/^\/+/, "");
+      if (pair) {
+        var trade = "https://dexscreener.com/" + pair;
+        document.querySelectorAll("[data-trade]").forEach(function (el) {
+          el.href = trade;
+        });
+        var src = trade + "?embed=1&theme=dark&trades=0&info=0";
+        document.getElementById("chart-root").innerHTML =
+          '<iframe class="chart-frame" title="DexScreener" src="' + src + '" allow="clipboard-write" allowfullscreen></iframe>';
+      }
+
+      copyBtn.addEventListener("click", function () {
         var text = ca || "Coming soon";
         navigator.clipboard.writeText(text).then(function () {
           toast.textContent = ca ? "Copied." : "Nothing live yet.";
           toast.classList.add("show");
-          setTimeout(function () { toast.classList.remove("show"); }, 1800);
+          copyBtn.classList.add("copied");
+          setTimeout(function () {
+            toast.classList.remove("show");
+            copyBtn.classList.remove("copied");
+          }, 1800);
         });
       });
 
-      var root = document.getElementById("chart-root");
-      if (cfg.dexscreenerPair) {
-        var src = "https://dexscreener.com/" + cfg.dexscreenerPair.replace(/^\/+/, "") +
-          "?embed=1&theme=dark&trades=0&info=0";
-        root.innerHTML = '<iframe class="chart-frame" title="DexScreener" src="' + src + '" allow="clipboard-write" allowfullscreen></iframe>';
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var coin = document.getElementById("coin");
+      var tilt = coin && coin.querySelector(".coin-tilt");
+      if (coin && tilt && !reduce && window.matchMedia("(hover: hover)").matches) {
+        coin.addEventListener("mousemove", function (e) {
+          var r = coin.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          tilt.style.transform = "rotateY(" + (x * 16).toFixed(2) + "deg) rotateX(" + (-y * 12).toFixed(2) + "deg)";
+        });
+        coin.addEventListener("mouseleave", function () {
+          tilt.style.transform = "";
+        });
       }
     })();
   </script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>

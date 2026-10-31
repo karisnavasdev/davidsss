@@ -38,6 +38,7 @@ button { font-family: inherit; }
   padding: 0.85rem 1.5rem;
   background: rgba(9, 9, 9, 0.78);
   backdrop-filter: blur(18px);
+  border-top: 2px solid #00c805;
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -67,7 +68,24 @@ button { font-family: inherit; }
   text-transform: uppercase;
   color: var(--muted);
 }
+.nav-links a {
+  position: relative;
+  transition: color 0.2s ease;
+}
 .nav-links a:hover { color: var(--ink); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.28rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
 
 .wrap {
   width: min(1120px, calc(100% - 3rem));
@@ -90,6 +108,17 @@ button { font-family: inherit; }
   text-transform: uppercase;
   color: var(--muted);
 }
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background: #00c805;
+  box-shadow: 0 0 0 0 rgba(0, 200, 5, 0.55);
+  animation: pulse 1.8s ease-out infinite;
+  vertical-align: 1px;
+}
 h1 {
   margin: 0;
   font-family: var(--serif);
@@ -98,7 +127,16 @@ h1 {
   line-height: 0.88;
   letter-spacing: -0.035em;
 }
-h1 em { font-style: italic; }
+h1 em {
+  font-style: italic;
+  display: inline-block;
+  background: linear-gradient(120deg, var(--ink) 20%, #d7ffe0 48%, var(--ink) 78%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sheen 5.5s ease-in-out infinite;
+}
 .ticker {
   margin: 1.35rem 0 0;
   font-family: var(--mono);
@@ -137,6 +175,12 @@ h1 em { font-style: italic; }
 .btn:hover {
   background: rgba(243, 239, 230, 0.06);
   border-color: var(--ink);
+  transform: translateY(-1px);
+}
+.btn.copied {
+  background: #00c805;
+  color: #071208;
+  border-color: #00c805;
 }
 .btn.primary {
   background: var(--ink);
