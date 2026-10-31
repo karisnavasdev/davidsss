@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David Dobrik Coin — $DAVID</title>
+  <meta name="description" content="David Dobrik Coin ($DAVID) — The currency of FOMO." />
+  <meta name="theme-color" content="#090909" />
+  <meta property="og:title" content="David Dobrik Coin — $DAVID" />
+  <meta property="og:description" content="The currency of FOMO." />
+  <meta property="og:image" content="assets/banner.png" />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="" />
+      <span>David</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#ca">Contract</a>
+      <a href="#chart">Chart</a>
+      <a href="#tweet">Tweet</a>
+      <a href="https://x.com/TheApophenoth/status/2116564158401446384" target="_blank" rel="noopener">X</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">David Dobrik Coin</p>
+        <h1>The currency<br />of <em>FOMO.</em></h1>
+        <p class="ticker">$DAVID</p>
+        <p class="lead">
+          FOMO spotted as the main sponsor of David Dobrik’s Halloween party.
+          He made a FOMO. This is the coin.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#ca">Get the CA</a>
+          <a class="btn" href="#chart">Live chart</a>
+          <a class="btn" href="https://x.com/TheApophenoth/status/2116564158401446384" target="_blank" rel="noopener">Origin tweet</a>
+        </div>
+      </div>
+      <div class="hero-coin">
+        <img src="assets/logo.png" alt="1 David Coin — the currency of FOMO" />
+      </div>
+    </section>
+
+    <section class="stills" aria-label="Party stills">
+      <figure>
+        <img src="assets/party1.jpg" alt="David Dobrik at the Halloween party" />
+        <figcaption>Halloween party</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/party2.jpg" alt="Club FOMO projected across the pool at night" />
+        <figcaption>Club FOMO</figcaption>
+      </figure>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <p class="eyebrow">About</p>
+        <blockquote>
+          <p>He made a FOMO. It’s his username, funded last night.</p>
+          <footer>Apophenoth</footer>
+        </blockquote>
+      </div>
+      <div class="about-copy">
+        <p>
+          <strong>David Dobrik Coin</strong> ($DAVID) is the currency of FOMO.
+          Built for the moment FOMO hit the Halloween party.
+        </p>
+        <p>One coin. The call that started it.</p>
+      </div>
+    </section>
+
+    <figure class="portrait">
+      <img src="assets/banner.png" alt="David Dobrik" />
+    </figure>
+
+    <section class="split">
+      <article class="panel" id="ca">
+        <h2>Contract address</h2>
+        <div class="ca-box">
+          <code id="ca-text">Coming soon</code>
+          <button class="btn" type="button" id="copy-ca">Copy</button>
+        </div>
+        <div class="copy-toast" id="copy-toast" role="status">Copied.</div>
+      </article>
+
+      <article class="panel" id="tweet">
+        <h2>Origin tweet</h2>
+        <div class="tweet-embed">
+          <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">
+            <p lang="en" dir="ltr">He made a FOMO its his username funded last night</p>
+            &mdash; ap 💎 (@TheApophenoth)
+            <a href="https://x.com/TheApophenoth/status/2116564158401446384">October 31, 2026</a>
+          </blockquote>
+        </div>
+        <noscript>
+          <p class="tweet-fallback"><a href="https://x.com/TheApophenoth/status/2116564158401446384" target="_blank" rel="noopener">View on X</a></p>
+        </noscript>
+      </article>
+    </section>
+
+    <section class="panel chart-panel" id="chart">
+      <h2>DexScreener</h2>
+      <div id="chart-root">
+        <div class="chart-placeholder">
+          <div>
+            <strong>Chart opens with the listing</strong>
+            The live pair shows up here once it’s trading.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div>David Dobrik Coin · $DAVID</div>
+      <div>Not financial advice · DYOR</div>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var cfg = window.DAVID || {};
+      var caEl = document.getElementById("ca-text");
+      var toast = document.getElementById("copy-toast");
+      var ca = (cfg.ca && cfg.ca !== "COMING_SOON") ? cfg.ca : "";
+      caEl.textContent = ca || "Coming soon";
+
+      document.getElementById("copy-ca").addEventListener("click", function () {
+        var text = ca || "Coming soon";
+        navigator.clipboard.writeText(text).then(function () {
+          toast.textContent = ca ? "Copied." : "Nothing live yet.";
+          toast.classList.add("show");
+          setTimeout(function () { toast.classList.remove("show"); }, 1800);
+        });
+      });
+
+      var root = document.getElementById("chart-root");
+      if (cfg.dexscreenerPair) {
+        var src = "https://dexscreener.com/" + cfg.dexscreenerPair.replace(/^\/+/, "") +
+          "?embed=1&theme=dark&trades=0&info=0";
+        root.innerHTML = '<iframe class="chart-frame" title="DexScreener" src="' + src + '" allow="clipboard-write" allowfullscreen></iframe>';
+      }
+    })();
+  </script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>
